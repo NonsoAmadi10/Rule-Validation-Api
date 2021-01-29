@@ -1,7 +1,7 @@
-export const successResponse =(message, data, res) => {
+export const Response =(message,status, data, res) => {
     return res.send({
         message,
-        status: "success",
+        status,
         data
     });
 }

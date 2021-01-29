@@ -1,4 +1,4 @@
-import { successResponse } from './utils'
+import { Response } from './utils'
 class LogicController {
 
     static info(req, res) {
@@ -10,7 +10,7 @@ class LogicController {
             twitter: "@jackhoudini__"
         };
 
-        return successResponse("My Rule-Validation API", myInfo, res);
+        return Response("My Rule-Validation API",'success', myInfo, res);
     }
 }
 

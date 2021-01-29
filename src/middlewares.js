@@ -31,6 +31,8 @@ export const sanitizer =(req, res, next) => {
       if (checkEmpty(field)) return response('field is required in the rule object.', 400);
       if (checkEmpty(condition)) return response('condition is required in the rule object.',400);
       if (checkEmpty(condition_value)) return response('condition value is required in the rule object.',400);
+      
+      
     return next();
     
 }

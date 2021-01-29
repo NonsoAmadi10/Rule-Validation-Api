@@ -1,3 +1,5 @@
+import _ from 'underscore-contrib';
+
 export const Response =(message,status, data, res, statusCode=200) => {
     return res.status(statusCode).send({
         message,
@@ -19,14 +21,19 @@ export const isObj =(val)=> {
 export const checkValidField =(field, data)=> {
     const itsObj = isObj(data);
     const itsArr = Array.isArray(data);
-    if(!itsArr && isObj){
+    
+    if(!itsArr && data!=field && isObj){
         return data.hasOwnProperty(field)
-    }else{
-        if (data != field){
-            return data.includes(field);
-        }else{
-            return field == data;
-        }
     }
     
+    // if (itsArr && !isObj && data != field){
+    //     return data.includes(field);
+    // }
+
+    if(!itsArr && !itsObj && data == field) return field == data;
+
+    return data.includes(field)
+    
 }
+
+export const getObjValue =(obj, required)=> _.getPath(obj, required);

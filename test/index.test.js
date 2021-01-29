@@ -146,6 +146,7 @@ describe('POST /validate-rule', () => {
         .post('/validate-rule')
         .send(body)
         .end((err, res) => {
+        
             expect(res.status).to.equal(400);
             expect(res.body.message).to.equal('field missions is missing from data.')
             done();
@@ -153,4 +154,22 @@ describe('POST /validate-rule', () => {
 
     });
 
+
+    it('should accept JSON data containing a rule and data field to validate the rule against.', (done) => {
+        const body = {
+            rule: { field: "missions", condition: "gte",condition_value: 30 },
+            data: {name: "James Holden", crew: "Rocinante", age: 34, position: "Captain", missions: 45},
+        };
+        chai.request(app)
+        .post('/validate-rule')
+        .send(body)
+        .end((err, res) => {
+        console.log(res.body)
+            expect(res.status).to.equal(200);
+            expect(res.body.message).to.equal('field missions successfully validated.')
+            done();
+        });
+
+    });
+    
 });

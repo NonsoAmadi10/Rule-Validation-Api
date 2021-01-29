@@ -2,11 +2,15 @@ import express from 'express';
 import { config } from 'dotenv';
 import routes from './routes';
 
+
+
+
 config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use('/', routes);
+
 
 
 

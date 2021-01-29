@@ -17,9 +17,10 @@ export const isObj =(val)=> {
     return val === Object(val)
 }
 export const checkValidField =(field, data)=> {
+    const itsObj = isObj(data);
     const itsArr = Array.isArray(data);
-    if(!itsArr){
-        return true;
+    if(!itsArr && isObj){
+        return data.hasOwnProperty(field)
     }else{
         if (data != field){
             return data.includes(field);

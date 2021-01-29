@@ -19,7 +19,7 @@ app.set('x-powered-by', false);
 const port = process.env.PORT || 3000 ;
 
 app.get('/docs', (req, res) => {
-    res.redirect('https://web.postman.co/documentation/14391038-02281dda-e82c-4ae8-b69e-f749e9d53862/publish')
+    res.redirect('https://documenter.getpostman.com/view/14391038/TW6xonyr')
 })
 
 app.all('*', (req, res) => res.status(404).json({

@@ -3,7 +3,10 @@ import { Response, checkValidField,getObjValue, isObj } from './utils';
 
 class LogicController {
 
+    
     static info(req, res) {
+
+  
         const myInfo = {
             name: "Amadi Justice Chinonso",
             github: "@NonsoAmadi10",
@@ -14,6 +17,7 @@ class LogicController {
 
         return Response("My Rule-Validation API",'success', myInfo, res);
     }
+
 
     static validateRule(req, res){
         const erresponse = (message,code=400, data=null) => res.status(code).send({message, status: "error", data});

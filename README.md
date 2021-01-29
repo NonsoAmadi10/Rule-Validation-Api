@@ -1,5 +1,5 @@
 # Rule-Validation-Api
-[![Build Status](https://travis-ci.com/NonsoAmadi10/Rule-Validation-Api.svg?branch=main)](https://travis-ci.com/NonsoAmadi10/Rule-Validation-Api)
+[![Build Status](https://travis-ci.com/NonsoAmadi10/Rule-Validation-Api.svg?branch=main)](https://travis-ci.com/NonsoAmadi10/Rule-Validation-Api)  |  [![Coverage Status](https://coveralls.io/repos/github/NonsoAmadi10/Rule-Validation-Api/badge.svg?branch=main)](https://coveralls.io/github/NonsoAmadi10/Rule-Validation-Api?branch=main)
 
 ### Technologies 
 - Node JS >= 13.1

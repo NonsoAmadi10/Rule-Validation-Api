@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nyc mocha test/*.test.js   --require @babel/register --no-timeout  --exit",
     "lint": "./node_modules/.bin/eslint",
-    "coveralls-coverage": "NODE_ENV=test coveralls < lcov.info",
+    "coveralls": "NODE_ENV=test coveralls < lcov.info",
     "clean": "rm -rf build && mkdir build",
     "build": "npm run clean && babel -d ./build ./src -s",
     "start": "node ./build/index.js",

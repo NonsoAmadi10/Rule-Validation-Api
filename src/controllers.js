@@ -44,6 +44,7 @@ class LogicController {
         if(!checkValidField(field, data)) return erresponse(`field ${field} is missing from data.`, 400);
          /** extract the required field from the data object so that you can compare */
             if(isObj(data)){
+                console.log(isObj(data))
                 requiredDataField = getObjValue(data, field);
             }else{
          requiredDataField = typeof data =="array" ? data.toString() : data; 
@@ -77,7 +78,6 @@ class LogicController {
               return Response(`field ${field} successfully validated.`, 'success', validData, res, 200);
           }else{
         
-          console.log(requiredDataField)
         const errData = responseData(true, field, requiredDataField, condition, condition_value);
         return erresponse(`field ${field} failed validation.`,  400, errData);
     }

@@ -16,7 +16,7 @@ export const checkValidRequestBody =(obj)=> {
 
 }
 export const isObj =(val)=> {
-    return val === Object(val)
+    return val === Object(val) && !Array.isArray(val)
 }
 export const checkValidField =(field, data)=> {
     const itsObj = isObj(data);

@@ -4,7 +4,13 @@
   "description": "A simple validation rule ",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nyc mocha test/*.test.js   --require @babel/register --no-timeout  --exit",
+    "lint": "./node_modules/.bin/eslint",
+    "coveralls-coverage": "NODE_ENV=test coveralls < lcov.info",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && babel -d ./build ./src -s",
+    "start": "node ./build/index.js",
+    "dev:start": "nodemon --exec babel-node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,13 +29,22 @@
   "homepage": "https://github.com/NonsoAmadi10/Rule-Validation-Api#readme",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.12.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.18.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.11"
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0"
   }
 }

@@ -1,6 +1,7 @@
 # Rule-Validation-Api
 [![Build Status](https://travis-ci.com/NonsoAmadi10/Rule-Validation-Api.svg?branch=main)](https://travis-ci.com/NonsoAmadi10/Rule-Validation-Api)  |  [![Coverage Status](https://coveralls.io/repos/github/NonsoAmadi10/Rule-Validation-Api/badge.svg?branch=main)](https://coveralls.io/github/NonsoAmadi10/Rule-Validation-Api?branch=main)
 
+- The Documentation can be found [here](https://web.postman.co/documentation/14391038-02281dda-e82c-4ae8-b69e-f749e9d53862/publish)
 ### Technologies 
 - Node JS >= 13.1
 - Express JS 

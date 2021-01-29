@@ -18,6 +18,10 @@ app.set('x-powered-by', false);
 
 const port = process.env.PORT || 3000 ;
 
+app.get('/docs', (req, res) => {
+    res.redirect('https://web.postman.co/documentation/14391038-02281dda-e82c-4ae8-b69e-f749e9d53862/publish')
+})
+
 app.all('*', (req, res) => res.status(404).json({
     success: false,
     message: 'The page you are looking for does not exist'
